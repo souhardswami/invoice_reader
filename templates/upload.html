@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+
+{% block upload %}
+
+
+<header class="text-gray-400 bg-gray-900 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+      <a class="mr-5 hover:text-white"></a>
+      <a class="mr-5 hover:text-white"></a>
+      <a class="mr-5 hover:text-white"></a>
+      <a class="hover:text-white"></a>
+    </nav>
+    <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0">
+      
+      <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-orange-500"> In- <span class="text-white"> Voice</span> : </h1>
+
+    </a>
+    <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+      <a href="search">
+        <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Search Here
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container  mx-auto">
+
+
+
+      
+
+
+
+        <!-- <form method="POST" action="upload" enctype="multipart/form-data"> -->
+        <form method="POST" action="upload" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            
+
+                <div class="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+                    
+                    <label class="w-64 flex flex-col items-center px-4 py-6 bg-gray text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-orange-500 hover:text-white">
+                        <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
+                        </svg>
+                        <span class="mt-2 text-base leading-normal">Select a file</span>
+                        
+
+                            <input type='file' class="hidden" name="file" />
+                            
+                        </label>
+
+                    <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
+                      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">Upload Your File Here</h1>
+                      <div class="flex w-full justify-center items-end">
+                        <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
+                          <label for="hero-field" class="leading-7 text-sm text-gray-400">Enter Your Name : </label>
+                          <input type="text" id="hero-field" name="username" class="w-full bg-gray-800 rounded border bg-opacity-40 border-gray-700 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                    </div>
+                    <br/>
+                      
+                      <div class="flex text-gray-300">
+                        
+
+                        <button class="bg-orange-500 inline-flex py-3 px-5 rounded-lg items-center focus:outline-none hover:bg-orange-600 hover:text-white focus:outline-none">
+                            Submit
+                        </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </form>
+        </div>
+  </section> 
+
+{% endblock %}
